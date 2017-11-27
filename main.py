@@ -1,8 +1,15 @@
 import webbrowser 
 # Documnetation of webbrowser module - https://docs.python.org/3/library/webbrowser.html
+import sys
 
-tab_specify = 2  #Open a new browser tab
+args = sys.argv[1:]   # By default sys.argv[0] is the name of the script. So we start looking for the arguments starting from index 1
 
-url = "https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+if args:
 
-webbrowser.open(url, new=tab_specify)
+	tab_specify = 2  #Open a new browser tab
+	url = sys.argv[1]
+	webbrowser.open(url, new=tab_specify)
+
+else:
+	print("Please provide a valid URL to open")
+
