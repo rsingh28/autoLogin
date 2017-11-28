@@ -1,3 +1,4 @@
+
 import webbrowser 
 # Documnetation of webbrowser module - https://docs.python.org/3/library/webbrowser.html
 import sys
@@ -12,4 +13,3 @@ if args:
 
 else:
 	print("Please provide a valid URL to open")
-

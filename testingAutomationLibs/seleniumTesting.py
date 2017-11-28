@@ -1,3 +1,14 @@
+# Some general syntax for using find_element_by_xpath -
+
+# 1) driver.find_element_by_xpath("//<tag_name>[@accessKey=''])
+#	 Eample - driver.find_element_by_xpath("//input[@name='textUsr'])
+
+# 2) driver.find_element_by_xpath("//<tag_name>[contains(@id,'')])
+#	 Example - driver.find_element_by_xpath("//div[contains(@id,'passwordNext')]")
+
+# 3) driver.find_element_by_xpath("//<tag_name>[contains(@id,'') and contains(@accessKey,'')]")
+#	 Example - driver.find_element_by_xpath("//div[contains(@id,'identifierNext') and contains(@tabindex,'0')]") 
+
 import time
 import sys
 from selenium import webdriver
@@ -17,7 +28,7 @@ def googleSearch():
 	# Give 10 seconds to load the webPage
 	driver.set_page_load_timeout(10)
 
-	 # Get the Search-Box using "ID" found by inspecting search box element on google
+	# Get the Search-Box using "ID" found by inspecting search box element on google
 	# Alternate Way => searchBox = driver.find_element_by_name("q")
 	searchBox = driver.find_element_by_id("lst-ib")
 
@@ -28,8 +39,9 @@ def googleSearch():
 	btn = driver.find_element_by_name("btnK")
 
 	# Press the button
-	btn.click()
+	btn.send_keys(Keys.RETURN)
 
+	# Piece of code that ensures that the browser closes only when enter is pressed on the terminal
 	user_choice = raw_input('Please click ENTER button to close script')
 	if not user_choice:
 		print("ABORTED")
@@ -46,8 +58,6 @@ def googleSearchAuto():
 	input = driver.find_element_by_name("q")
 
 	input.send_keys(arguments[0])
-
-	print(arguments[0])
 
 	btn = driver.find_element_by_name("btnK")
 
