@@ -7,17 +7,17 @@ def login(email,password):
 
 	driver = webdriver.Chrome();
 
-	driver.get("http://gmail.com")
+	driver.get("http://mail.yahoo.com")
 
 	driver.set_page_load_timeout(10)
 
 	driver.maximize_window()
 
-	email_input = driver.find_element_by_name("identifier")
+	email_input = driver.find_element_by_name("username")
 
 	email_input.send_keys(email)
 
-	next_btn = driver.find_element_by_xpath("//div[contains(@id,'identifierNext') and contains(@tabindex,'0')]") 
+	next_btn = driver.find_element_by_name("signin")
 
 	next_btn.send_keys(Keys.RETURN)
 
@@ -29,13 +29,13 @@ def login(email,password):
 
 	password_input.send_keys(password);
 
-	next_btn1 = driver.find_element_by_xpath("//div[contains(@id,'passwordNext')]")
+	next_btn1 = driver.find_element_by_xpath("//button[contains(@id,'login-signin') and contains(@name,'verifyPassword')]")
 
 	next_btn1.send_keys(Keys.RETURN)
 
 	user_choice = raw_input('Please click ENTER button to close script')
 	if not user_choice:
-		print("ABORTED")
+		print("\n**** Thank You for using autoLogin ****\n")
 		quit()
 
 
@@ -47,7 +47,7 @@ def main():
 
 	else:
 
-		print("Logging You In ")
+		print("\n**** Login Initiated ****\n")
 
 		email = sys.argv[1]
 
