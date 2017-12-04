@@ -40,7 +40,7 @@ pip install selenium
 
 ```
 https://sites.google.com/a/chromium.org/chromedriver/
-Unzip the file and copy the chrom-driver to /usr/local/bin
+Unzip the file and copy the chrome-driver to /usr/local/bin
 ```
 End with an example of getting some data out of the system or using it for a little demo
 
