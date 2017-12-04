@@ -1,6 +1,6 @@
 # autoLogin
 
-A simple script that lets your login to you email from the command line
+A simple script that lets you login to your email from the command line
 
 ## Built With
 
