@@ -1,3 +1,7 @@
+# Main Logic - If the script is run for the first time, create a text file "credentials.txt" and save the emailID and password 
+# in it based on the input of the user. If the file already exists, parse the file to extract the email and password and call
+# the main login script based on chosen service - Google/Yahoo
+
 import os
 import time
 import getpass
@@ -132,8 +136,3 @@ def main():
 		login()
 
 main()
-
-
-
-
-
